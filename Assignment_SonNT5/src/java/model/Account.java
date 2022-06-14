@@ -8,15 +8,15 @@ package model;
  *
  * @author thanh
  */
-public class login {
-    private int user;
+public class Account {
+    private String user;
     private String password;
 
-    public int getUser() {
+    public String getUser() {
         return user;
     }
 
-    public void setUser(int user) {
+    public void setUser(String user) {
         this.user = user;
     }
 
@@ -27,5 +27,7 @@ public class login {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
     
 }

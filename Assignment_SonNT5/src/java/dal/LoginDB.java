@@ -4,38 +4,64 @@
  */
 package dal;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import model.login;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.Account;
 
 /**
  *
  * @author thanh
  */
-public class LoginDB extends DBContext<login>{
+public class LoginDB extends DBContext<Account> {
+
+    public Account getUserPassword(String user, String password) {
+        try {
+            String sql = "SELECT username,password FROM Login\n"
+                    + "WHERE username = ? AND password = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, user);
+            stm.setString(2, password);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next()){
+                Account acc = new Account();
+                acc.setUser(rs.getString("username"));
+                acc.setPassword(rs.getString("password"));
+                return acc; 
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 
     @Override
-    public ArrayList<login> list() {
+    public ArrayList<Account> list() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+    }
+
+    @Override
+    public Account get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public login get(int id) {
+    public void insert(Account model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void insert(login model) {
+    public void update(Account model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(login model) {
+    public void delete(Account model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
-    public void delete(login model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
 }

@@ -5,12 +5,14 @@
 
 package Login;
 
+import dal.LoginDB;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Account;
 
 /*
  * @author thanh
@@ -39,7 +41,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher("view/login.jsp").forward(request, response);
     } 
 
     /** 
@@ -55,6 +57,13 @@ public class Login extends HttpServlet {
         
         String user = request.getParameter("user");
         String password = request.getParameter("password");
+        LoginDB db = new LoginDB();
+        Account acc = db.getUserPassword(user, password);
+        if(acc!=null){
+            response.getWriter().println("Sucessful");
+        }else{
+            response.getWriter().println("user or password error");
+        }
     }
 
     /** 
