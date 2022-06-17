@@ -54,8 +54,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        
-        String user = request.getParameter("user");
+        String user = request.getParameter("username");
         String password = request.getParameter("password");
         LoginDB db = new LoginDB();
         Account acc = db.getUserPassword(user, password);
