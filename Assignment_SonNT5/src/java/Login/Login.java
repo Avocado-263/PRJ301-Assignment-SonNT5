@@ -59,9 +59,9 @@ public class Login extends HttpServlet {
         LoginDB db = new LoginDB();
         Account acc = db.getUserPassword(user, password);
         if(acc!=null){
-            response.getWriter().println("Sucessful");
+            request.getRequestDispatcher("view/schedule.jsp").forward(request, response);
         }else{
-            response.getWriter().println("user or password error");
+            request.getRequestDispatcher("view/confirm_error.jsp").forward(request, response);
         }
     }
 
