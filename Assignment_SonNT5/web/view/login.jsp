@@ -20,7 +20,7 @@
     </head>
     <body>
         <div>
-            <img class="img" src="temp/istockphoto-1221128440-612x612.jpg" alt=""/>
+            <img class="img" src="../temp/istockphoto-1221128440-612x612.jpg" alt=""/>
         </div>
         <div class="login-form">
             <form action="login" method="post">

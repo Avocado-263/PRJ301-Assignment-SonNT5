@@ -15,7 +15,7 @@
     <body>
         <div>
             <div class="title">
-                <img class="img" src="temp/istockphoto-1221128440-612x612.jpg" alt=""/>
+                <img class="img" src="../temp/istockphoto-1221128440-612x612.jpg" alt=""/>
                 <h1>
                     <span>University Academic Portal</span>
                 </h1>

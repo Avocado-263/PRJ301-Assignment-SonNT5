@@ -26,9 +26,8 @@
                     <th>Index</th>
                     <th>Member</th>
                     <th>Code</th>
-                    <th>Surname</th>
-                    <th>Middle name</th>
-                    <th>Given name</th>
+                    <th>Name</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -39,9 +38,7 @@
                         <a href="">KienNAHE130771</a>
                     </td>
                     <td>HE130771</td>
-                    <td>Nguyễn</td>
-                    <td>Anh</td>
-                    <td>Kiên</td>
+                    <td>Nguyễn Anh Kiên</td>
                     <td><input type="radio" name="check"> Attended</td>
                     <td><input type="radio" name="check"> Absent</td>
                 </tr>

@@ -20,15 +20,14 @@
                 </h1>
             </div>
         <table class="sortable">
-            <caption>... then see student list</caption>
+            <h2><span>... then see student list of (Class)</span></h2>
             <thead>
                 <tr>
                     <th>Index</th>
                     <th>Member</th>
                     <th>Code</th>
-                    <th>Surname</th>
-                    <th>Middle name</th>
-                    <th>Given name</th>
+                    <th>Name</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -36,12 +35,10 @@
                     <td>1</td>
 
                     <td>
-                        <a href="">KienNAHE130771</a>
+                        <a href="">ThanhNTHE150861</a>
                     </td>
-                    <td>HE130771</td>
-                    <td>Nguyễn</td>
-                    <td>Anh</td>
-                    <td>Kiên</td>
+                    <td>HE150861</td>
+                    <td>Nguyễn Tru?ng Thành</td>
                 </tr>
             </tbody>
         </table>
