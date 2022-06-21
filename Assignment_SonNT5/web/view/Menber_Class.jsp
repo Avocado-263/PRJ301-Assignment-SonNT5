@@ -18,27 +18,37 @@
                 <h1>
                     <span>University Academic Portal</span>
                 </h1>
+            <div id="User">
+                <span>ID</span> | <a href="login" class="">logout</a>
             </div>
+        </div>
         <table class="sortable">
             <h2><span>... then see student list of (Class)</span></h2>
             <thead>
                 <tr>
-                    <th>Index</th>
-                    <th>Member</th>
-                    <th>Code</th>
-                    <th>Name</th>
-
+                    <th class="row1">Index</th>
+                    <th class="row1">ID</th>
+                    <th class="row1">Name</th>
+                    <th class="row1">Dob</th>
+                    <th class="row1">Gender</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
 
-                    <td>
-                        <a href="">ThanhNTHE150861</a>
-                    </td>
-                    <td>HE150861</td>
-                    <td>Nguyễn Tru?ng Thành</td>
+                    <td>ID 1</td>
+                    <td>Name 1</td>
+                    <td>1999-09-09</td>
+                    <td>F or M</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>ID 2</td>
+                    <td>Name 2</td>
+                    <td>2000-01-01</td>
+                    <td>F or M</td>
                 </tr>
             </tbody>
         </table>

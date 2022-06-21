@@ -18,33 +18,43 @@
             <h1>
                 <span>University Academic Portal</span>
             </h1>
+            <div id="User">
+                <span>ID</span> | <a href="login" class="">logout</a>
+            </div>
         </div>
         <table class="sortable">
             <h2><span>... then see student list of (Class)</span></h2>
             <thead>
                 <tr>
-                    <th>Index</th>
-                    <th>Member</th>
-                    <th>Code</th>
-                    <th>Name</th>
-
+                    <th class="row1">Index</th>
+                    <th class="row1">ID</th>
+                    <th class="row1">Name</th>
+                    <th class="row1">Dob</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
 
-                    <td>
-                        <a href="">KienNAHE130771</a>
-                    </td>
-                    <td>HE130771</td>
-                    <td>Nguyễn Anh Kiên</td>
+                    <td>ID 1</td>
+                    <td>Name 1</td>
+                    <td>1999-09-09</td>
                     <td><input type="radio" name="check"> Attended</td>
                     <td><input type="radio" name="check"> Absent</td>
                 </tr>
+                <tr>
+                    <td>2</td>
+                    <td>ID 2</td>
+                    <td>Name 2</td>
+                    <td>2000-01-01</td>
+                    <td><input type="radio" name="check1"> Attended</td>
+                    <td><input type="radio" name="check2"> Absent</td>
+                </tr>
             </tbody>
         </table>
+        <div>
+            <input type="submit" value="Save" name="save" class="save" />
+        </div>
         <br>
-        <input type="submit" value="Save" name="Save" />
     </body>
 </html>
