@@ -23,7 +23,7 @@
             </div>
         </div>
         <table class="sortable">
-            <h2><span>... then see student list of (Class)</span></h2>
+            <h2><span>List student of (Class)</span></h2>
             <thead>
                 <tr>
                     <th class="row1">Index</th>

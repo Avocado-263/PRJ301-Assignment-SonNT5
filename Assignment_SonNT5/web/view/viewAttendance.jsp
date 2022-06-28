@@ -18,14 +18,14 @@
             <h1>
                 <span>University Academic Portal</span>
             </h1>
+            <div id="User">
+                <span>ID</span> | <a href="login" class="">logout</a>
+            </div>
         </div>
         <div>
             <form  action="" method="post">
-                <div id="User">
-                    <span>ID</span> | <a href="login" class="">logout</a>
-                </div>
                 <div>
-                    <h2>Activities for Name (ID)</h2>
+                    <h2>View attended of Name (ID)</h2>
                     <table>
                         <tbody>
                             <tr>

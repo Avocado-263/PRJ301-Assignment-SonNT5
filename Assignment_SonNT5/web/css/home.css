@@ -3,9 +3,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : Jun 20, 2022, 11:13:37 AM
+    Created on : Jun 27, 2022, 11:54:46 PM
     Author     : thanh
 */
+body{
+    background-image: url(../temp/Du-hoc-tai-University-of-Ottawa-Nen-giao-duc-hien-dai-cung-co-so-vat-chat-an-tuong-2-1536x863.jpg);
+}
 .title{
     display: inline-flex;
     background-color: rgb(25, 38, 56);
@@ -30,18 +33,17 @@ h1{
 h2{
     margin-top: 50px;
 }
-#ghichu{
-    border: 1px solid black;
-    margin-right: 65%;
-    margin-left: 10px;
-    border-radius: 5px;
+.button{
+    text-align: center;
 }
-#note{
-    margin-left: 20px;
-}
-.time_table{
-    border: 1px solid black;
+.nut{
+    padding: 50px;
+    background-color: #549dff;
+    text-decoration: none;
+    display: inline-flex;
+    color: white;
+    margin-top: 90px;
     border-radius: 5px;
-    margin-top: 30px;
-    margin-left: 10px;
+    box-sizing: border-box;
+    font-size: 30px;
 }

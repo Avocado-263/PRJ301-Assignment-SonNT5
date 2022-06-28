@@ -11,29 +11,38 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Account;
+import model.Role;
 
 /**
  *
  * @author thanh
  */
-public class LoginDB extends DBContext<Account> {
+public class AccountDB extends DBContext<Account> {
 
     public Account getUserPassword(String user, String password) {
         try {
-            String sql = "SELECT username,password FROM Login\n"
-                    + "WHERE username = ? AND password = ?";
+            String sql = "SELECT a.username\n"
+                    + "      ,a.password\n"
+                    + "      ,a.role\n"
+                    + "	  ,r.role_name\n"
+                    + "  FROM account a inner join roles r on a.role=r.id\n"
+                    + "  WHERE a.username = ? and a.password = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, user);
             stm.setString(2, password);
             ResultSet rs = stm.executeQuery();
-            if(rs.next()){
-                Account acc = new Account();
-                acc.setUser(rs.getString("username"));
-                acc.setPassword(rs.getString("password"));
-                return acc; 
+            if (rs.next()) {
+                Role roles = new Role();
+                roles.setId(Integer.parseInt(rs.getString("id")));
+                roles.setName(rs.getString("role_name"));
+                Account account = new Account();
+                account.setUser(rs.getString("username"));
+                account.setPassword(rs.getString("password"));
+                account.setRole(roles);
+                return account;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(LoginDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }

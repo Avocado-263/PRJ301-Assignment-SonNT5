@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author thanh
@@ -11,6 +13,17 @@ package model;
 public class Account {
     private String user;
     private String password;
+    private Role role;
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+
 
     public String getUser() {
         return user;

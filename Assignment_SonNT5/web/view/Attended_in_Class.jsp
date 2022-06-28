@@ -23,7 +23,8 @@
             </div>
         </div>
         <table class="sortable">
-            <h2><span>... then see student list of (Class)</span></h2>
+
+            <h2><span>Check attdened of (Class)</span></h2>
             <thead>
                 <tr>
                     <th class="row1">Index</th>
@@ -39,8 +40,8 @@
                     <td>ID 1</td>
                     <td>Name 1</td>
                     <td>1999-09-09</td>
-                    <td><input type="radio" name="check"> Attended</td>
-                    <td><input type="radio" name="check"> Absent</td>
+                    <td><input type="radio" name="check" value="1"> Attended</td>
+                    <td><input type="radio" name="check" value="0"> Absent</td>
                 </tr>
                 <tr>
                     <td>2</td>

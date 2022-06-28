@@ -3,21 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package Login;
+package Controller;
 
-import dal.LoginDB;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Account;
 
 /*
  * @author thanh
  */
-public class Login extends HttpServlet {
+public class home extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -28,6 +27,7 @@ public class Login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        request.getRequestDispatcher("view/home.jsp").forward(request, response);
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -41,7 +41,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.getRequestDispatcher("view/login.jsp").forward(request, response);
+        processRequest(request, response);
     } 
 
     /** 
@@ -54,15 +54,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String user = request.getParameter("username");
-        String password = request.getParameter("password");
-        LoginDB db = new LoginDB();
-        Account acc = db.getUserPassword(user, password);
-        if(acc!=null){
-            request.getRequestDispatcher("view/schedule.jsp").forward(request, response);
-        }else{
-            request.getRequestDispatcher("view/confirm_error.jsp").forward(request, response);
-        }
+        processRequest(request, response);
     }
 
     /** 

@@ -6,13 +6,43 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Created on : Jun 20, 2022, 4:02:23 PM
     Author     : thanh
 */
+
 .title{
     display: inline-flex;
+    background-color: rgb(25, 38, 56);
+    color: white;
+    width: 100%;
+    height: 110px;
 }
 .img{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 h1{
-    padding-top: 30px;
+    padding-left: 25%;
+    font-size: 40px
+}
+#User{
+    padding-left: 30%;
+    padding-top: 40px;
+}
+h2{
+    margin-top: 50px;
+}
+#ghichu{
+    border: 1px solid black;
+    margin-right: 65%;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+#note{
+    margin-left: 20px;
+}
+.time_table{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 10px;
 }
