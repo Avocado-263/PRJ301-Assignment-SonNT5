@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Class {
     private String id;
     private String name;
-   private ArrayList<Student> student = new ArrayList<>();
+    private ArrayList<Student> student = new ArrayList<>();
 
     public ArrayList<Student> getStudent() {
         return student;

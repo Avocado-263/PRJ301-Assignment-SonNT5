@@ -1,8 +1,3 @@
-<%-- 
-    Document   : confirm
-    Created on : Jun 20, 2022, 8:49:18 AM
-    Author     : thanh
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,15 +11,15 @@
             {
                 count--;
                 document.getElementById('timer').innerHTML = count;
-                if (count <= 0)
+                if(count <=0)
                     window.location.href = 'login';
             }
-            setInterval(redirect, 1000);
+            setInterval(redirect,1000);
         </script>
     </head>
     <body>
-        User or Password Error
+        User account or password incorrect !
         <Br/>
-        Redirect to search page after <span id="timer"> </span> seconds
+        Redirect to login page after <span id="timer">3</span> seconds
     </body>
 </html>

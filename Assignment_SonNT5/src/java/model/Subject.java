@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author thanh
@@ -11,6 +13,7 @@ package model;
 public class Subject {
     private String id;
     private String name;
+    private ArrayList<Student> student = new ArrayList<>();
 
     public String getId() {
         return id;

@@ -5,6 +5,7 @@
 package model;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,6 +17,7 @@ public class Student {
     private String gender;
     private String address;
     private Date dob;
+    private ArrayList<Class> Class = new ArrayList<>();
 
     public String getId() {
         return id;

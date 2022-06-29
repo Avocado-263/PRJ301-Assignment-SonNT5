@@ -4,27 +4,28 @@
     Author     : thanh
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>View Schedule</title>
-        <link href="../css/style_schedule.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style_schedule.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div>
             <div class="title">
-                <img class="img" src="../temp/istockphoto-1221128440-612x612.jpg" alt=""/>
+                <img class="img" src="temp/istockphoto-1221128440-612x612.jpg" alt=""/>
                 <h1>
                     <span>University Academic Portal</span>
                 </h1>
                 <div id="User">
-                    <span>ID</span> | <a href="login" class="">logout</a>
+                    <span>${requestScope.account.user}</span> | <a href="login">logout</a>
                 </div>
             </div>
             <div>
-                <form  action="login" method="post">
+                <form  action="schedule" method="post">
                     <div>
                         <h2>Activities for
                             <span id="idStudent"> Name (ID)</span>
@@ -44,9 +45,6 @@
                                         <span><strong>Year</strong></span>
                                         <select name="Year">
                                             <option selected="selected" value="">2015</option>
-                                            <option selected="selected" value="">2016</option>
-                                            <option selected="selected" value="">2017</option>
-                                            <option selected="selected" value="">2018</option>
                                         </select>
                                         <br>    
                                         <span><strong>Week</strong></span>

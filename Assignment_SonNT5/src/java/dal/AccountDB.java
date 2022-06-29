@@ -33,7 +33,7 @@ public class AccountDB extends DBContext<Account> {
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
                 Role roles = new Role();
-                roles.setId(Integer.parseInt(rs.getString("id")));
+                roles.setId(Integer.parseInt(rs.getString("role")));
                 roles.setName(rs.getString("role_name"));
                 Account account = new Account();
                 account.setUser(rs.getString("username"));
@@ -50,7 +50,6 @@ public class AccountDB extends DBContext<Account> {
     @Override
     public ArrayList<Account> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-
     }
 
     @Override

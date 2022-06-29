@@ -5,13 +5,14 @@
 
 package Controller;
 
+import dal.AccountDB;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Account;
 
 /*
  * @author thanh
@@ -27,6 +28,11 @@ public class home extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        String user = request.getParameter("username");
+        String password = request.getParameter("password");
+        AccountDB db = new AccountDB();
+        Account account = db.getUserPassword(user, password);
+        request.setAttribute("account", account);
         request.getRequestDispatcher("view/home.jsp").forward(request, response);
     } 
 
@@ -41,7 +47,7 @@ public class home extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+
     } 
 
     /** 
@@ -55,6 +61,7 @@ public class home extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         processRequest(request, response);
+       
     }
 
     /** 

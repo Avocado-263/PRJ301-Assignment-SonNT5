@@ -23,8 +23,6 @@ public class Account {
         this.role = role;
     }
 
-
-
     public String getUser() {
         return user;
     }
