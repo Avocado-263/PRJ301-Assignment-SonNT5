@@ -28,7 +28,7 @@ public class ClassDB extends DBContext<Class> {
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, id);
             ResultSet rs = stm.executeQuery();
-            if (rs.next()) {
+            while (rs.next()) {
 //                Student st = new Student();
 //                st.setId(rs.getString("s.s_id"));
 //                st.setName(rs.getString("s.full_name"));

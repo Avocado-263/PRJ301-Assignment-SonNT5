@@ -39,11 +39,13 @@
                                     <td valign="top">
                                         <table>
                                             <tbody>
+                                                <c:forEach items="${requestScope.cls}" var="c">
                                                 <tr>
                                                     <td>
-                                                        <a href="">ABC</a>(SE1634,start 09/05/2022)
+                                                        ${c.id}
                                                     </td>
-                                                </tr>         
+                                                </tr>    
+                                                </c:forEach>
                                             </tbody>
                                         </table>
                                     </td>                                             
