@@ -62,7 +62,8 @@ public class login extends HttpServlet {
         Account account = db.getUserPassword(user, password);
         request.setAttribute("account", account);
         if (account != null) {
-            request.getRequestDispatcher("home").forward(request, response);
+//            response.sendRedirect("home");
+            request.getRequestDispatcher("/home").forward(request, response);
         } else {
             request.getRequestDispatcher("view/dml_confirm.jsp").forward(request, response);
         }

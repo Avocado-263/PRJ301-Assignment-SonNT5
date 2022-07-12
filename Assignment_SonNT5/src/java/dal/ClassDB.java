@@ -20,11 +20,46 @@ import model.Student;
  */
 public class ClassDB extends DBContext<Class> {
 
+    public ArrayList<Class> searchListByClass(String className) {
+        ArrayList<Class> clas = new ArrayList<>();
+        ArrayList<Student> list = new ArrayList<>();
+        try {
+            String sql = "SELECT s.s_id\n"
+                    + "      ,s.full_name\n"
+                    + "      ,s.gender\n"
+                    + "      ,s.address\n"
+                    + "      ,s.dob\n"
+                    + "	  ,c.c_id\n"
+                    + "	  ,c.c_name\n"
+                    + "  FROM student s, class_member c\n"
+                    + "  WHERE c.s_id = s.s_id and c.c_id = '"+className+"'";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Student st = new Student();
+                st.setId(rs.getString("s.s_id"));
+                st.setName(rs.getString("s.full_name"));
+                st.setGender(rs.getString("s.gender"));
+                st.setAddress(rs.getString("s.address"));
+                st.setDob(rs.getDate("s.dob"));
+                list.add(st);
+            }
+            Class cls = new Class();
+            cls.setId(rs.getString("c_id"));
+            cls.setName(rs.getString("name"));
+            cls.setStudent(list);
+            clas.add(cls);
+        } catch (SQLException ex) {
+            Logger.getLogger(ClassDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return clas;
+    }
+
     public ArrayList<Class> searchClassByID(String id) {
         ArrayList<Class> clas = new ArrayList<>();
         try {
             String sql = "select c.c_id, cl.name from class_member c, student s, class cl\n"
-                    + "where c.s_id = s.s_id and cl.c_id = c.c_id and s.s_id = N'?'";
+                    + "where c.s_id = s.s_id and cl.c_id = c.c_id and s.s_id = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, id);
             ResultSet rs = stm.executeQuery();
@@ -49,21 +84,7 @@ public class ClassDB extends DBContext<Class> {
 
     @Override
     public ArrayList<Class> list() {
-        ArrayList<Class> clas = new ArrayList<>();
-        try {
-            String sql = "select c_id, [name] from class";
-            PreparedStatement stm = connection.prepareStatement(sql);
-            ResultSet rs = stm.executeQuery();
-            if (rs.next()) {
-                Class cl = new Class();
-                cl.setId(rs.getString("c_id"));
-                cl.setName(rs.getString("name"));
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(ClassDB.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return clas;
-
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override

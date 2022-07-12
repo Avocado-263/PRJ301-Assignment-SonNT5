@@ -28,11 +28,7 @@ public class home extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String user = request.getParameter("username");
-        String password = request.getParameter("password");
-        AccountDB db = new AccountDB();
-        Account account = db.getUserPassword(user, password);
-        request.setAttribute("account", account);
+        request.getAttribute("account");
         request.getRequestDispatcher("view/home.jsp").forward(request, response);
     } 
 
@@ -47,7 +43,7 @@ public class home extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-
+        processRequest(request, response);
     } 
 
     /** 

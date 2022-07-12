@@ -31,19 +31,10 @@
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Password" required="required" name="password">
                 </div>
-<!--                <div>
-                    <label>
-                        <select name="role">
-                            <option value="1">Teacher</option>
-                            <option value="2">Student</option>
-                        </select>
-                    </label>
-                </div>-->
                 <div class="form-group">
                     <input type="submit" value="Log in" class="btn btn-primary btn-block">
                 </div>        
             </form>
         </div>
-    </form>     
-</body>
+    </body>
 </html>

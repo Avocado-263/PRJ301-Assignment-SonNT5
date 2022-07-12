@@ -40,11 +40,13 @@
                                         <table>
                                             <tbody>
                                                 <c:forEach items="${requestScope.cls}" var="c">
-                                                <tr>
-                                                    <td>
-                                                        ${c.id}
-                                                    </td>
-                                                </tr>    
+                                                    <tr>
+                                                        <td>
+                                                            <form action="view_class" method="POST">
+                                                                <input type="submit" value="${c.id}" name="id_class"></a>   
+                                                            </form>                                                   
+                                                        </td>
+                                                    </tr>    
                                                 </c:forEach>
                                             </tbody>
                                         </table>
@@ -67,14 +69,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                </tr>
+                                <c:if test="${requestScope.listSt ne null}">
+                                    <c:forEach items="${requestScope.listSt}" var="st">
+                                        <tr>
+                                            <td></td>
+                                            <td>${st.id}</td>
+                                            <td>${st.name}</td>
+                                            <td>${st.gender}</td>
+                                            <td>${st.address}</td>
+                                            <td>${st.dob}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </c:if>
                             </tbody>
                         </table>
                     </td>

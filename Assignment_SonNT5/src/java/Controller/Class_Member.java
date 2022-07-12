@@ -28,10 +28,6 @@ public class Class_Member extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-
-    } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
@@ -63,7 +59,11 @@ public class Class_Member extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        String id_class = request.getParameter("id_class");
+        ClassDB cdb = new ClassDB();
+        ArrayList<Class> cls = cdb.searchListByClass(id_class);
+        request.setAttribute("listSt", cls);
+        request.getRequestDispatcher("view/view_class.jsp").forward(request, response);
     }
 
     /** 
